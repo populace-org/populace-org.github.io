@@ -1,0 +1,45 @@
+body { 
+ /*  background: #eee url('http://i.imgur.com/eeQeRmk.png'); http://subtlepatterns.com/weave/ */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #585858;
+  padding: 22px 10px;
+  padding-bottom: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute; 
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing: 0;
+  width: 160a0px;
+  table-layout: fixed;
+}
+th {
+  font-weight: bold;
+ 	padding: 12px 30px;
+ 	padding-left: 42px;
+ 	background-color: #c9dff0;
+ 	cursor:pointer;
+} 
+h1 { 
+  font-family: 'Amarante', Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sort-icon {
+    font-size: 9px;
+    margin-left: 5px;
+}
+
+
+#download-icon{
+	width: 20px;
+	height: 20px;
+}
