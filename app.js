@@ -229,7 +229,7 @@ app.controller('tableController',function($scope, $http, $filter, ngTableParams)
           return;
       }
       if($scope.srcFilter.length > 0 && $.inArray('all',$scope.srcFilter) < 0){
-        var source = dataset.scr
+        var source = dataset.spec
         if(source && $.inArray('true',$scope.srcFilter) < 0)
           return;
         else if(!scource && $.inArray('false',$scope.srcFilter) < 0)
