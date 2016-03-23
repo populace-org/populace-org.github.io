@@ -229,10 +229,10 @@ app.controller('tableController',function($scope, $http, $filter, ngTableParams)
           return;
       }
       if($scope.srcFilter.length > 0 && $.inArray('all',$scope.srcFilter) < 0){
-        var source = dataset.spec
+        var source = dataset.dscrp
         if(source && $.inArray('true',$scope.srcFilter) < 0)
           return;
-        else if(!scource && $.inArray('false',$scope.srcFilter) < 0)
+        else if(!source && $.inArray('false',$scope.srcFilter) < 0)
           return;
       }
       // console.log(dataset);
