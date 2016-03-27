@@ -4,7 +4,7 @@ var app = angular.module('myApp', ['ngTable','ngResource']);
 app.controller('tableController',function($scope, $http, $filter, ngTableParams){
   $scope.datasets = [];
   $scope.showdata = [];
-  var spreadsheetID = "1oegAgIuzL7s1-7WdPKfMkIPGSrOkihvO3AA7";
+  var spreadsheetID = "1oegAgIuzL7s1-7WdPKfMkIPGSrOkihvO3AA7_SSLp9Q";
   var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
 
   $.getJSON(url, function(data) {
