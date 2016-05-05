@@ -60,7 +60,7 @@
               <li><a href="index.html#about">About</a></li>
               <li><a href="index.html#datasets">Datasets</a></li>
               <li><a href="index.html#code">Code</a></li>
-              
+              <li><a href="index.html#book">Book</a></li>
               <li><a href="index.html#papers">Papers</a></li>
               <li><a href="index.html#contact">Contact Us</a><li>
             </ul>
@@ -93,43 +93,37 @@
       <a name="about"></a> 
       <div class="row">
         <div class="col-md-12">
-          <h2> <font color="blue"> Why Populace? </font></h2>
+          <h2> <font color="blue"> What is the Populace Project About? </font></h2>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h5> Blah Blah
-          </h5>
-          
-      <a name="about"></a> 
-      <div class="row">
-        <div class="col-md-12">
-          <h2> <font color="blue"> Key Features </font> </h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h5>
-            <b> Zenvisage </b> enables users to effortlessly receive visualization recommendations for interesting trends, patterns, and insights from large datasets. Here are the key features of Zenvisage:
-          </h5>
-          <h5>
-             <ul>  
-                <li> <b> Interactive Insight Sketch Interface. </b>
-            Zenvisage users can directly draw the trend-line, bar chart, or scatterplot they are looking for, and then rely on the system to find appropriate matches: for instance, a person browsing a dataset of material properties may be looking for those materials displaying a specific correlation between two properties. Users can also drag-and-drop trends onto the canvas and then subsequently modify the trend. 
-            Using this interface, users can specify the insights they are looking for, and expect Zenvisage to find matches, much like a "visualization search engine".
-            <li> <b> Sophisticated Visual Query Interface. </b>
-            For more complex requests, Zenvisage supports a query language, called ZQL (pronounced "zee-quel"), short for Zenvisage Query Language, a flexible and intuitive mechanism to specify desired insights from visualizations. Using a small number of ZQL lines, users can explore trends, patterns, and insights in any which way they desire.  
-            <!--The design of ZQL is inspired from Query by Example (QBE) Language, and  builds on work on visualization specification for visual analytics, in          particular from Polaris, and Grammar of Graphics.-->
+          <h5> Development of machine learning algorithms for processing and understanding
+              unstructured data requires large volumes of accurate training data.
+              Crowdsourcing is the primary means for generating training data at scale. 
+              When combined with sophisticated algorithms trained on 
+              this data, 
+              crowdsourcing represents our best hope for solving many of our most pressing problems.
+          </h5> 
 
-               
-            <li> <b> Visualization Recommendations. </b> In addition to returning results for user-submitted queries, zenvisage runs a host of parallel queries to find the most interesting trends for that subset of data the user is currently viewing and presents them as visualization recommendations.
-            </li>
+          <h5>
+              However, crowdsourcing is expensive, since human workers need to be compensated;
+              indeed, several companies spend millions of dollars on crowdsourcing each year.
+              Despite this, our understanding of how to formally reason about
+              and optimize crowdsourcing to minimize cost, while still generating
+              large volumes of high-quality data, is surprisingly poor.
+          </h5>
+
+          <h5> <b><i> The goal of the populace project is to make it effortless to get large volumes
+            of high quality labeled data at low cost.</i> </b> In our previous work, we developed
+            techniques to do this for simple boolean tasks -- now we're expanding out to open-ended
+            expert crowdsourcing, where a whole host of new challenges emerge.
  
-             </ul>
-           Zenvisage generalizes and extends our prior system <b>SeeDB</b> (see papers).
-         </h5>
-        </div>
-      </div>
+          </h5> 
+          <br/> 
+          <h4> On this page, you will find a crowdsourcing dataset search tool, all of our code, our crowdsourcing book,
+            as well as all of our papers.
+          </h4
     
  
 
@@ -140,46 +134,46 @@
         </div>
       </div>
     <div role="main" class="container container-showcase" ng-controller="tableController">
-        <div class="" style="margin-top:0px;">
-            <div>
-            <h3>Filter Datasets by Attribute</h3>
-            <table >
-                <tr><td style="text-align:left">Worker Demographic Info Available: </td><td>
-                <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('wkr','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('wkr','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Payment Info Available:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('payment','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('payment','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Bonus Info Available:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('bonus','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('bonus','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Is Ground Truth:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('gt','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('gt','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Task Description Available:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('dscrp','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('dscrp','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Latency Info Available:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('ltc','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('ltc','false')"/> No
-                </td></tr>
-                <tr><td style="text-align:left">Related Source Available:</td><td>
-                <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All 
-                <input type="checkbox" ng-click = "hidenAttr('src','true')"/> Yes
-                <input type="checkbox" ng-click = "hidenAttr('src','false')"/> No
-                </td></tr>
-            </table>
+        <div class="col-md-12" style="margin-top:0px;">
+            
+              <h3>Filter Datasets by Attribute</h3>
+              <table >
+                  <tr><td style="text-align:left">Worker Demographic Info Available: </td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('wkr','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('wkr','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Payment Info Available:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('payment','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('payment','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Bonus Info Available:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('bonus','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('bonus','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Is Ground Truth:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('gt','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('gt','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Task Description Available:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('dscrp','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('dscrp','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Latency Info Available:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('ltc','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('ltc','false')"/> No
+                  </td></tr>
+                  <tr><td style="text-align:left">Related Source Available:</td><td>
+                  <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('src','true')"/> Yes
+                  <input type="checkbox" ng-click = "hidenAttr('src','false')"/> No
+                  </td></tr>
+              </table>
             </div>
         
             <p></p>
@@ -196,64 +190,62 @@
                     <td data-title="'Link'"><a href="{{item.link}}">download</a></td>
                 </tr>
             </table>
-    </div>
-</div>
+        </div>
 
 
+
+      <a name="code"></a>
+      <div class="row">
+        <div class="col-md-12">
+          <h2> <font color="blue"> Code </font> </h2>
+          <h4> All our code is open source, and is available on <a href="https://github.com/populace-org">github</a>. </h4>
+        </div>
+      </div>
       
-<!--
+
+      <a name="book"></a>
       <div class="row">
-        <div class="col-12 col-sm-4">
-          <h2>Visual Analytics</h2>
-          <p>Automatically recommending visualizations or visual summaries on very large volumes of data</p>
-          <p><a class="btn btn-default" href="visual.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-12 col-sm-4">
-          <h2>Interactive Analytics</h2>
-          <p>Interactive querying of large datasets, keeping track of versions, while possibly sacrificing
-            slightly on accuracy of query results </p>
-            <p><a class="btn btn-default" href="query.html" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-12 col-sm-4">
-            <h2>Crowd-Powered Analytics </h2>
-            <p>Using crowdsourcing to process and make sense of large volumes of data </p>
-            <p><a class="btn btn-default" href="scoop.html" role="button">View details &raquo;</a></p>
+          <div class="col-md-12">
+          <h2><font color="blue"> Book </font></h2>
           </div>
       </div>
-  -->
-      <!--
       <div class="row">
-        <div class="col-12 col-sm-4">
-          <h2>Information Extraction</h2>
-          <p>Extracting information from the web, integrating it with existing information, and surfacing this information to users </p>
-          <p><a class="btn btn-default" href="web.html" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-12 col-sm-4">
-          <h2>Recommendation Systems</h2>
-          <p>Building scalable recommendation systems that take into account
-            contextual information</p>
-            <p><a class="btn btn-default" href="recom.html" role="button">View details &raquo;</a></p>
+          <div class="col-md-12">
+                  <a class="pull-right" href="#">
+                    <img class="media-object img-responsive img-thumbnail" width="150px" src="http://data-people.cs.illinois.edu/images/crowd-book.jpg" alt="Book">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Crowdsourced Data Management: Industry and Academic Perspectives</h4>
+                    <p> 
+                      Crowdsourcing and human computation enable organizations to accomplish tasks that are currently not possible for fully automated techniques to complete, or require more flexibility and scalability than traditional employment relationships can facilitate. In the area of data processing, companies have benefited from crowd workers on platforms such as Amazon’s Mechanical Turk or Upwork to complete tasks as varied as content moderation, web con- tent extraction, entity resolution, and video/audio/image processing. Several academic researchers from diverse areas ranging from the social sciences to computer science have embraced crowdsourcing as a research area, resulting in algorithms and systems that improve crowd work quality, latency, or cost. Given the relative nascence of the field, the academic and the practitioner communities have largely operated independently of each other for the past decade, rarely exchanging techniques and experiences. 
+                    </p>
+                    <p>
+                      In this book, we aim to narrow the gap between academics and practitioners. On the academic side, we summarize the state of the art in crowd-powered algorithms and system design tailored to large-scale data processing. On the industry side, we survey 13 industry users (e.g., Google, Facebook, Microsoft) and 4 marketplace providers of crowd work (e.g., CrowdFlower, Upwork) to identify how hundreds of engineers and tens of million dollars are invested in various crowdsourcing solutions. 
+                    </p>
+                    <p>Through the book, we hope to simultaneously introduce academics to real problems that practitioners encounter every day, and provide a survey of the state of the art for practitioners to incorporate into their designs. Through our surveys, we also highlight the fact that crowd-powered data processing is a large and growing field. Over the next decade, we believe that most technical organizations will in some way benefit from crowd work, and hope that this book can help guide the effective adoption of crowdsourcing across these organizations.
+                    </p>
+                
+                    <small>
+                      <script type="text/javascript">
+                      display_papers(["crowd-book"], true);
+                      </script>
+                    </small>
+                  </div>
+                </div>
           </div>
-      </div>
-      -->
+        
+
       <a name="papers"></a>
       <div class="row">
         <div class="col-md-12">
           <h2> <font color="blue"> Recent Paper Releases </font> </h2>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
           <h3> <font> Papers on Crowd Algorithms </font> </h3>
-
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <script type="text/javascript">
-          display_papers(["jellybean", "batch-crowds", "crowdgather", "generalizations", "find", "sampling-guarantees","sampling","max", "crowdscreen"], true, 10);
+          display_papers(["jellybean", "batch-crowds", "crowdgather", "generalizations", "find", "sampling-guarantees","sampling","max", "crowdscreen","human-gs"], true, 10);
           </script>
         </div>
       </div>
@@ -315,7 +307,7 @@
       <div class="row">
         <div class="col-md-12">
           <h2><font color="blue"> Contact Us </font></h2>
-          <h5> The Populace project is led by Prof. <a href="http://data-people.cs.illinois.edu">Aditya Parameswaran</a>, with a talented team of students, including (in alphabetical order) Akash Das Sarma, Karan Goel, Ayush Jain, Vipul Venkataraman. The external collaborators we work with include Profs. David Forsyth, Jian Peng, Dan Roth, Hari Sundaram, Jennifer Widom. 
+          <h5> The Populace project is led by Prof. <a href="http://data-people.cs.illinois.edu">Aditya Parameswaran</a>, with a talented team of brave undergraduate and graduate students, including (in alphabetical order) Akash Das Sarma, Karan Goel, Ayush Jain, Andrew Kuznetsov, Shreya Rajpal, Vipul Venkataraman. The external collaborators we work with include Profs. David Forsyth, Jian Peng, Dan Roth, Hari Sundaram, Jennifer Widom. 
         </h5>
 
         </div>
