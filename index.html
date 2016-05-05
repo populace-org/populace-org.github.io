@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-  <head>
-        <title>Populous: Crowdsourcing Datasets</title>
+    <head>
+        <title>Populace</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -14,70 +14,288 @@
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+
         <script src="app.js" type="text/javascript"></script>
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/offcanvas.css" rel="stylesheet">
+        <style> 
+        .carousel{
+            background: #2f4350;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto; 
+        }    
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 60%;
+            height: 400px;    
+            margin: auto;
+
+        } 
+        </style>
+        <script type="text/javascript" src="http://data-people.cs.illinois.edu/papers.json"></script>    
+        <script type="text/javascript" src="http://data-people.cs.illinois.edu/display_papers.js"></script>
+        <script src="http://data-people.cs.illinois.edu/js/bootstrap.js"></script>
     </head>
 <body>
-<div role="main" class="container container-showcase" ng-controller="tableController">
-    <div class="" style="margin-top:30px;">
-    	<div class="page-header">
-				<h1 id="tables">Populous: Crowdsourcing Datasets</h1>
-		</div>
-        <div>
-        <h3>Hiden Attributes Filters</h3>
-        <table >
-        <tr><td style="text-align:left">Worker Demographic Info Available: </td><td>
-        <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('wkr','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('wkr','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Payment Info Available:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('payment','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('payment','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Bonus Info Available:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('bonus','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('bonus','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Is Ground Truth:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('gt','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('gt','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Task Description Available:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('dscrp','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('dscrp','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Latency Info Available:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('ltc','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('ltc','false')"/> No
-        </td></tr>
-        <tr><td style="text-align:left">Related Source Available:</td><td>
-        <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All 
-        <input type="checkbox" ng-click = "hidenAttr('src','true')"/> Yes
-        <input type="checkbox" ng-click = "hidenAttr('src','false')"/> No
-        </td></tr>
-        </table>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html#">Populace</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html#">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#datasets">Datasets</a></li>
+              <li><a href="index.html#code">Code</a></li>
+              
+              <li><a href="index.html#papers">Papers</a></li>
+              <li><a href="index.html#contact">Contact Us</a><li>
+            </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+      <!--<div class="col-12 col-sm-9"> -->
+          <br> <br>
+          <div class="row">
+            <div class="col-md-4"> 
+               <img src="images/zenvisage.png" class="img-responsive img" style="margin-bottom: 10pt;">  
+           </div> 
+            <div class="col-md-8"> 
+              <h2>
+                <font color="#A52A2A">Populace combines the best of human and algorithmic computation 
+                    to make sense of complex datasets.</font>
+              </h2>
+              <br> <br>
+            </div>
+          </div>
+      <!--</div>-->
+      </div>
+  
+
+      <a name="about"></a> 
+      <div class="row">
+        <div class="col-md-12">
+          <h2> <font color="blue"> Why Populace? </font></h2>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5> Blah Blah
+          </h5>
+          
+      <a name="about"></a> 
+      <div class="row">
+        <div class="col-md-12">
+          <h2> <font color="blue"> Key Features </font> </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>
+            <b> Zenvisage </b> enables users to effortlessly receive visualization recommendations for interesting trends, patterns, and insights from large datasets. Here are the key features of Zenvisage:
+          </h5>
+          <h5>
+             <ul>  
+                <li> <b> Interactive Insight Sketch Interface. </b>
+            Zenvisage users can directly draw the trend-line, bar chart, or scatterplot they are looking for, and then rely on the system to find appropriate matches: for instance, a person browsing a dataset of material properties may be looking for those materials displaying a specific correlation between two properties. Users can also drag-and-drop trends onto the canvas and then subsequently modify the trend. 
+            Using this interface, users can specify the insights they are looking for, and expect Zenvisage to find matches, much like a "visualization search engine".
+            <li> <b> Sophisticated Visual Query Interface. </b>
+            For more complex requests, Zenvisage supports a query language, called ZQL (pronounced "zee-quel"), short for Zenvisage Query Language, a flexible and intuitive mechanism to specify desired insights from visualizations. Using a small number of ZQL lines, users can explore trends, patterns, and insights in any which way they desire.  
+            <!--The design of ZQL is inspired from Query by Example (QBE) Language, and  builds on work on visualization specification for visual analytics, in          particular from Polaris, and Grammar of Graphics.-->
+
+               
+            <li> <b> Visualization Recommendations. </b> In addition to returning results for user-submitted queries, zenvisage runs a host of parallel queries to find the most interesting trends for that subset of data the user is currently viewing and presents them as visualization recommendations.
+            </li>
+ 
+             </ul>
+           Zenvisage generalizes and extends our prior system <b>SeeDB</b> (see papers).
+         </h5>
+        </div>
+      </div>
+    
+ 
+
+    <a name="search"></a>
+    <div class="row">
+        <div class="col-md-12">
+          <h2> <font color="blue"> Search for Crowdsourcing Datasets </font> </h2>
+        </div>
+      </div>
+    <div role="main" class="container container-showcase" ng-controller="tableController">
+        <div class="" style="margin-top:0px;">
+            <div>
+            <h3>Filter Datasets by Attribute</h3>
+            <table >
+                <tr><td style="text-align:left">Worker Demographic Info Available: </td><td>
+                <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('wkr','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('wkr','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Payment Info Available:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('payment','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('payment','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Bonus Info Available:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('bonus','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('bonus','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Is Ground Truth:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('gt','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('gt','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Task Description Available:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('dscrp','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('dscrp','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Latency Info Available:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('ltc','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('ltc','false')"/> No
+                </td></tr>
+                <tr><td style="text-align:left">Related Source Available:</td><td>
+                <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All 
+                <input type="checkbox" ng-click = "hidenAttr('src','true')"/> Yes
+                <input type="checkbox" ng-click = "hidenAttr('src','false')"/> No
+                </td></tr>
+            </table>
+            </div>
         
-		<p></p>
-		<table infinite-scroll="getMoreData()" ng-table="datasetsTable" show-filter="true" class="table table-striped table-border table-hover">
-			<tr ng-repeat="item in showdata | filter: hidenAttrFilter">
-				<td data-title="'Detail'"><div ng-controller="alertController">
-				<button ng-click="show_detail(item)">+</button>
-				</div></td>
-				<td data-title="'Title'" sortable="'title'" filter="{title:'text'}">{{item.title}}</td>
-				<td data-title="'Type'" sortable="'data_type'" filter="{data_type:'select'}" filter-data="types">{{item.data_type}}</td>
-				<td data-title="'Task'" sortable="'task'" filter="{task:'select'}" filter-data="tasks">{{item.task}}</td>
-				<td data-title="'Marketplace'" sortable="'marketplace'" filter="{marketplace:'text'}">{{item.marketplace}}</td>
-				<td data-title="'Related Source'" sortable="'scr'" filter="{scr:'text'}">{{item.scr}}</td>
-				<td data-title="'Link'"><a href="{{item.link}}">download</a></td>
-			</tr>
-			</table>
-   	</div>
+            <p></p>
+            <table infinite-scroll="getMoreData()" ng-table="datasetsTable" show-filter="true" class="table table-striped table-border table-hover">
+                <tr ng-repeat="item in showdata | filter: hidenAttrFilter">
+                    <td data-title="'Detail'"><div ng-controller="alertController">
+                    <button ng-click="show_detail(item)">+</button>
+                    </div></td>
+                    <td data-title="'Title'" sortable="'title'" filter="{title:'text'}">{{item.title}}</td>
+                    <td data-title="'Type'" sortable="'data_type'" filter="{data_type:'select'}" filter-data="types">{{item.data_type}}</td>
+                    <td data-title="'Task'" sortable="'task'" filter="{task:'select'}" filter-data="tasks">{{item.task}}</td>
+                    <td data-title="'Marketplace'" sortable="'marketplace'" filter="{marketplace:'text'}">{{item.marketplace}}</td>
+                    <td data-title="'Related Source'" sortable="'scr'" filter="{scr:'text'}">{{item.scr}}</td>
+                    <td data-title="'Link'"><a href="{{item.link}}">download</a></td>
+                </tr>
+            </table>
+    </div>
 </div>
-  </body>
+
+
+      
+<!--
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          <h2>Visual Analytics</h2>
+          <p>Automatically recommending visualizations or visual summaries on very large volumes of data</p>
+          <p><a class="btn btn-default" href="visual.html" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-12 col-sm-4">
+          <h2>Interactive Analytics</h2>
+          <p>Interactive querying of large datasets, keeping track of versions, while possibly sacrificing
+            slightly on accuracy of query results </p>
+            <p><a class="btn btn-default" href="query.html" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-12 col-sm-4">
+            <h2>Crowd-Powered Analytics </h2>
+            <p>Using crowdsourcing to process and make sense of large volumes of data </p>
+            <p><a class="btn btn-default" href="scoop.html" role="button">View details &raquo;</a></p>
+          </div>
+      </div>
+  -->
+      <!--
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          <h2>Information Extraction</h2>
+          <p>Extracting information from the web, integrating it with existing information, and surfacing this information to users </p>
+          <p><a class="btn btn-default" href="web.html" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-12 col-sm-4">
+          <h2>Recommendation Systems</h2>
+          <p>Building scalable recommendation systems that take into account
+            contextual information</p>
+            <p><a class="btn btn-default" href="recom.html" role="button">View details &raquo;</a></p>
+          </div>
+      </div>
+      -->
+      <a name="papers"></a>
+      <div class="row">
+        <div class="col-md-12">
+          <h2> <font color="blue"> Papers </font> </h2>
+
+        </div>
+      </div>
+
+      <a name="selected"></a> 
+      <div class="row">
+        <div class="col-md-12">
+          <script type="text/javascript">
+          display_papers(["zenvisage", "vizrec", "seedb", "seedb-demo", "smart-drill-down",  "smart-drill-down-demo", "seedb-paper", "intel-sample","needletail"], true, 10);
+          </script>
+        </div>
+      </div>
+
+      <a name="contact"></a>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2><font color="blue"> Contact Us </font></h2>
+          <h5> The Populace project is led by Prof. <a href="http://data-people.cs.illinois.edu">Aditya Parameswaran</a>, with a talented team of students, including (in alphabetical order) Akash Das Sarma, Karan Goel, Ayush Jain, Vipul Venkataraman. The external collaborators we work with include Profs. David Forsyth, Jian Peng, Dan Roth, Hari Sundaram, Jennifer Widom. 
+        </h5>
+
+        </div>
+      </div>
+
+
+
+
+
+      <hr> 
+
+        
+
+      <div class="row">
+        <div class="col-md-4" align="left">
+          <p>&nbsp; &nbsp; &copy; Aditya Parameswaran 2016</p>
+        </div>
+        <div class="col-md-8" align="right">
+          <p> With thanks to our funding sources:  <img src="http://www.cccblog.org/wp-content/uploads/2014/01/bd2k_logo.png" style="height:30px;" border="5"> 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/0/03/20070812181510%21NSF_Logo.jpg/120px-NSF_Logo.jpg" style="height:50px;" border="5"> 
+          <img src="http://research.google.com/images/faculty_award.png" style="height:50px;" border="5"> <img src="http://peer.berkeley.edu/news/wp-content/uploads/2015/08/SiebelEnergyInstitute_Logowhite.jpg" style="height:50px;" border="5"> </p>
+
+        </div>
+      </div>
+
+
+      
+      </div><!--/row-->
+
+
+
+
+    
+
+    </div><!--/.container-->
+
+
+
+</body>
 </html>
