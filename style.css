@@ -1,0 +1,15 @@
+@media (max-width: 800px) { 
+
+#myCarousel {
+        display:none !important;
+    }
+ 
+.collapse.navbar-collapse ul.nav.navbar-nav {
+  float: left;
+}  
+
+.navbar-brand {
+  opacity: 0;
+}
+ 
+}
