@@ -1,8 +1,28 @@
+h5, .h5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+h6, .h6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+.navbar-header a.navbar-brand {
+  color: #000;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.navbar-header navbar-nav{
+  color: #000;
+}
+
+
 @media (max-width: 800px) { 
 
-#myCarousel {
-        display:none !important;
-    }
  
 .collapse.navbar-collapse ul.nav.navbar-nav {
   float: left;
@@ -10,6 +30,8 @@
 
 .navbar-brand {
   opacity: 0;
+    font-size: 16px;
+  font-weight: 700;
 }
  
 }
