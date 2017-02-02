@@ -1,16 +1,16 @@
 'use strict';
 var app = angular.module('myApp', ['ngTable','ngResource']);
 
-app.controller('tableController',function($scope, $http, $filter, ngTableParams){
+app.controller('tableController',function($scope, $http, $filter, NgTableParams){
   $scope.datasets = [];
   $scope.showdata = [];
   var spreadsheetID = "1oegAgIuzL7s1-7WdPKfMkIPGSrOkihvO3AA7_SSLp9Q";
   var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
 
   $.getJSON(url, function(data) {
- 
+
   var entry = data.feed.entry;
- 
+
   $(entry).each(function(){
     // Column names are name, age, etc.
     $('.results').prepend('<h2>'+this.gsx$bonus+'</h2><p>'+this.gsx$title+'</p>');
@@ -69,10 +69,10 @@ app.controller('tableController',function($scope, $http, $filter, ngTableParams)
       $scope.showdata.push(dataset);
     }
   });
- 
+
  });
 	// $scope.datasets = []; //declare an empty array
-	// $http.get("/app/dataset.json").success(function(response){ 
+	// $http.get("/app/dataset.json").success(function(response){
  //    $scope.showdata = response;  //initializing web with all datasets
 	// 	$scope.datasets = response;  //ajax request to fetch data into $scope.data
 	// });
@@ -82,7 +82,7 @@ app.controller('tableController',function($scope, $http, $filter, ngTableParams)
   {id:"image",title:"image"},
   {id:"video",title:"video"},
   {id:"other",title:"other"}]
-	
+
   $scope.tasks = [{id:"sort", title:"sort"},
   {id:"cluster",title:"cluster"},
   {id:"search",title:"search"},
@@ -94,7 +94,7 @@ app.controller('tableController',function($scope, $http, $filter, ngTableParams)
   {id:"other",title:"other"}]
 
 
-  $scope.datasetsTable = new ngTableParams(
+  $scope.datasetsTable = new NgTableParams(
     {
       page:1,
       count:$scope.datasets.length
@@ -256,9 +256,9 @@ app.controller('alertController', ['$scope', '$window', function($scope, $window
     }]);
 
 function toString(item){
-		var result = '<!doctype html><html lang="en">' + 
+		var result = '<!doctype html><html lang="en">' +
 		'<head><meta charset="utf-8"><title>Search Crowdsourcing Datasets</title>'+
-	    // '<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">' + 
+	    // '<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">' +
     	// '<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">' +
  	    '<link rel="stylesheet" type="text/css" href="css/itempagestyle.css"></head>'+
  	    '<body>' +
@@ -275,15 +275,15 @@ function toString(item){
       	'<tr>' +
       		'<td colspan="3">Marketplace:</td><td>' + String(item.marketplace) + '</td>'+
       		'<td colspan="3">Worker Demographic Info Available:</td><td>' + toNY(item.wkr_demo) +'</td>' +
-      	'</tr>'+ 
+      	'</tr>'+
       	'<tr>' +
       		'<td colspan="3">Payment Info Available:</td><td>' + toNY(item.payment)+ '</td>'+
       		'<td colspan="3">Bonus Info Available:</td><td>'+ toNY(item.bonus) + '</td>'+
       	'</tr>'+
-      	'<tr>' + 
+      	'<tr>' +
       		'<td colspan="3">Is Ground Truth:</td><td>' + toNY(item.grd_truth) + '</td>'+
       		'<td colspan="3">Task Description Available:</td><td>' + toNY(item.dscrp) + '</td>'+
-      	'</tr>'+ 
+      	'</tr>'+
       	'<tr>' +
 	      	'<td colspan="3">Latency Info Available:</td><td>' + toNY(item.ltc_info) + '</td>'+
 	      	'<td colspan="3">Related Source Available:</td><td>' + toNY(item.scr) +'</td>'+
@@ -295,5 +295,5 @@ function toString(item){
 }
 
 function toNY(bool){
-	return (bool)?'Yes':'No'; 
+	return (bool)?'Yes':'No';
 }
