@@ -101,14 +101,15 @@ app.controller('tableController',function($scope, $http, $filter, NgTableParams)
     },
     {
       total: 1,
-      getData: function ($defer, params) {
+      getData: function (params) {
         $scope.data = $scope.datasets;
         $scope.data = params.sorting() ? $filter('orderBy')($scope.datasets, params.orderBy()) : $scope.datasets;
         $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
         $scope.showdata = $scope.data;
-        // $scope.showdata = $scope.data.slice(0,100);
+        //$scope.showdata = $scope.data.slice(0,100);
         // $defer.resolve($scope.data);
         }
+        
   });
 
   $scope.getMoreData = function () {
