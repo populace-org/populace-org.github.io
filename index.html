@@ -7,10 +7,12 @@
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+        <!-- <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css"> -->
+        <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
         <script src="https://rawgit.com/BinaryMuse/ngInfiniteScroll/1.0.0/build/ng-infinite-scroll.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular-resource.js"></script>
-        <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
+        <!-- <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script> -->
+        <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
@@ -19,22 +21,22 @@
         <link href="style.css" rel="stylesheet">
 
         <link href="css/offcanvas.css" rel="stylesheet">
-        <style> 
+        <style>
         .carousel{
             background: #2f4350;
             width: 85%;
             margin-left: auto;
-            margin-right: auto; 
-        }    
+            margin-right: auto;
+        }
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 60%;
-            height: 400px;    
+            height: 400px;
             margin: auto;
 
-        } 
+        }
         </style>
-        <script type="text/javascript" src="https://web.engr.illinois.edu/~adityagp/papers.json"></script>    
+        <script type="text/javascript" src="https://web.engr.illinois.edu/~adityagp/papers.json"></script>
         <script type="text/javascript" src="https://web.engr.illinois.edu/~adityagp/display_papers.js"></script>
         <script src="app.js"></script>
         <script src="https://web.engr.illinois.edu/~adityagp/js/bootstrap.js"></script>
@@ -75,20 +77,20 @@
 
           <br> <br>
           <div class="row">
-            <div class="col-md-4"> 
-               <img src="images/Populace102cropped.png" class="img-responsive img" style="margin-top: 10pt; margin-bottom: 10pt;">  
-           </div> 
-            <div class="col-md-8"> 
+            <div class="col-md-4">
+               <img src="images/Populace102cropped.png" class="img-responsive img" style="margin-top: 10pt; margin-bottom: 10pt;">
+           </div>
+            <div class="col-md-8">
               <h2>
-                <font style="margin-top: 10pt;">Populace combines the best of human and algorithmic computation 
+                <font style="margin-top: 10pt;">Populace combines the best of human and algorithmic computation
                     to make sense of complex datasets.</font>
               </h2>
             </div>
         </div>
       </div>
-  
 
-      <a name="about"></a> 
+
+      <a name="about"></a>
       <div class="row">
         <div class="col-md-12">
           <h2> What is the Populace Project About? </h2>
@@ -98,11 +100,11 @@
         <div class="col-md-12">
           <h5> Development of machine learning algorithms for processing and understanding
               unstructured data requires large volumes of accurate training data.
-              Crowdsourcing is the primary means for generating training data at scale. 
-              When combined with sophisticated algorithms trained on 
-              this data, 
+              Crowdsourcing is the primary means for generating training data at scale.
+              When combined with sophisticated algorithms trained on
+              this data,
               crowdsourcing represents our best hope for solving many of our most pressing problems.
-          </h5> 
+          </h5>
 
           <h5>
               However, crowdsourcing is expensive, since human workers need to be compensated;
@@ -116,14 +118,14 @@
             of high quality labeled data at low cost.</i> </b> In our previous work, we developed
             techniques to do this for simple boolean tasks -- now we're expanding out to open-ended
             expert crowdsourcing, where a whole host of new challenges emerge.
- 
-          </h5> 
-          <br/> 
+
+          </h5>
+          <br/>
           <h4> On this page, you will find a crowdsourcing dataset search tool, all of our code, our crowdsourcing book,
             as well as all of our papers.
           </h4
-    
- 
+
+
 
     <a name="search"></a>
     <div class="row">
@@ -133,47 +135,47 @@
       </div>
     <div role="main" class="container container-showcase" ng-controller="tableController">
         <div class="col-md-12" style="margin-top:0px;">
-            
+
               <h3>Filter Datasets by Attribute</h3>
               <table >
                   <tr><td style="text-align:left">Worker Demographic Info Available: </td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('wkr','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('wkr','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('wkr','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Payment Info Available:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('payment','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('payment','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('payment','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Bonus Info Available:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('bonus','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('bonus','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('bonus','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Is Ground Truth:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('gt','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('gt','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('gt','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Task Description Available:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('dscrp','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('dscrp','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('dscrp','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Latency Info Available:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('ltc','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('ltc','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('ltc','false')"/> No
                   </td></tr>
                   <tr><td style="text-align:left">Related Source Available:</td><td>
-                  <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All 
+                  <input type="checkbox" ng-click = "hidenAttr('src','all')"/> All
                   <input type="checkbox" ng-click = "hidenAttr('src','true')"/> Yes
                   <input type="checkbox" ng-click = "hidenAttr('src','false')"/> No
                   </td></tr>
               </table>
             </div>
-        
+
             <p></p>
             <table infinite-scroll="getMoreData()" ng-table="datasetsTable" show-filter="true" class="table table-striped table-border table-hover">
                 <tr ng-repeat="item in showdata | filter: hidenAttrFilter">
@@ -199,7 +201,7 @@
           <h4> All our code is open source, and is available on <a href="https://github.com/populace-org">github</a>. </h4>
         </div>
       </div>
-      
+
 
       <a name="book"></a>
       <div class="row">
@@ -214,15 +216,15 @@
                   </a>
                   <div class="media-body">
                     <h4 class="media-heading">Crowdsourced Data Management: Industry and Academic Perspectives</h4>
-                    <p> 
-                      Crowdsourcing and human computation enable organizations to accomplish tasks that are currently not possible for fully automated techniques to complete, or require more flexibility and scalability than traditional employment relationships can facilitate. In the area of data processing, companies have benefited from crowd workers on platforms such as Amazon’s Mechanical Turk or Upwork to complete tasks as varied as content moderation, web con- tent extraction, entity resolution, and video/audio/image processing. Several academic researchers from diverse areas ranging from the social sciences to computer science have embraced crowdsourcing as a research area, resulting in algorithms and systems that improve crowd work quality, latency, or cost. Given the relative nascence of the field, the academic and the practitioner communities have largely operated independently of each other for the past decade, rarely exchanging techniques and experiences. 
+                    <p>
+                      Crowdsourcing and human computation enable organizations to accomplish tasks that are currently not possible for fully automated techniques to complete, or require more flexibility and scalability than traditional employment relationships can facilitate. In the area of data processing, companies have benefited from crowd workers on platforms such as Amazon’s Mechanical Turk or Upwork to complete tasks as varied as content moderation, web con- tent extraction, entity resolution, and video/audio/image processing. Several academic researchers from diverse areas ranging from the social sciences to computer science have embraced crowdsourcing as a research area, resulting in algorithms and systems that improve crowd work quality, latency, or cost. Given the relative nascence of the field, the academic and the practitioner communities have largely operated independently of each other for the past decade, rarely exchanging techniques and experiences.
                     </p>
                     <p>
-                      In this book, we aim to narrow the gap between academics and practitioners. On the academic side, we summarize the state of the art in crowd-powered algorithms and system design tailored to large-scale data processing. On the industry side, we survey 13 industry users (e.g., Google, Facebook, Microsoft) and 4 marketplace providers of crowd work (e.g., CrowdFlower, Upwork) to identify how hundreds of engineers and tens of million dollars are invested in various crowdsourcing solutions. 
+                      In this book, we aim to narrow the gap between academics and practitioners. On the academic side, we summarize the state of the art in crowd-powered algorithms and system design tailored to large-scale data processing. On the industry side, we survey 13 industry users (e.g., Google, Facebook, Microsoft) and 4 marketplace providers of crowd work (e.g., CrowdFlower, Upwork) to identify how hundreds of engineers and tens of million dollars are invested in various crowdsourcing solutions.
                     </p>
                     <p>Through the book, we hope to simultaneously introduce academics to real problems that practitioners encounter every day, and provide a survey of the state of the art for practitioners to incorporate into their designs. Through our surveys, we also highlight the fact that crowd-powered data processing is a large and growing field. Over the next decade, we believe that most technical organizations will in some way benefit from crowd work, and hope that this book can help guide the effective adoption of crowdsourcing across these organizations.
                     </p>
-                
+
                     <small>
                       <script type="text/javascript">
                       display_papers(["crowd-book"], true);
@@ -231,7 +233,7 @@
                   </div>
                 </div>
           </div>
-        
+
 
       <a name="papers"></a>
       <div class="row">
@@ -255,7 +257,7 @@
         </div>
       </div>
 
-      
+
       <div class="row">
         <div class="col-md-12">
           <script type="text/javascript">
@@ -271,7 +273,7 @@
         </div>
       </div>
 
-      
+
       <div class="row">
         <div class="col-md-12">
           <script type="text/javascript">
@@ -298,14 +300,14 @@
 
 
 
-    
+
 
       <a name="contact"></a>
 
       <div class="row">
         <div class="col-md-12">
           <h2>Contact Us </h2>
-          <h5> The Populace project is led by Prof. <a href="http://data-people.cs.illinois.edu">Aditya Parameswaran</a>, with a talented team of brave undergraduate and graduate students, including (in alphabetical order) Akash Das Sarma, Karan Goel, Ayush Jain, Andrew Kuznetsov, Shreya Rajpal, Vipul Venkataraman. The external collaborators we work with include Profs. David Forsyth, Jian Peng, Dan Roth, Hari Sundaram, Jennifer Widom. 
+          <h5> The Populace project is led by Prof. <a href="http://data-people.cs.illinois.edu">Aditya Parameswaran</a>, with a talented team of brave undergraduate and graduate students, including (in alphabetical order) Akash Das Sarma, Karan Goel, Ayush Jain, Andrew Kuznetsov, Shreya Rajpal, Vipul Venkataraman. The external collaborators we work with include Profs. David Forsyth, Jian Peng, Dan Roth, Hari Sundaram, Jennifer Widom.
         </h5>
 
         </div>
@@ -315,30 +317,30 @@
 
 
 
-      <hr> 
+      <hr>
 
-        
+
 
       <div class="row">
         <div class="col-md-9" align="left">
         <!--  <p>&nbsp; &nbsp; &copy; Aditya Parameswaran 2016</p>
         </div>
         <div class="col-md-9" align="right">-->
-          <p> With thanks to our funding sources:  <img src="http://www.cccblog.org/wp-content/uploads/2014/01/bd2k_logo.png" style="height:30px;" border="5"> 
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/0/03/20070812181510%21NSF_Logo.jpg/120px-NSF_Logo.jpg" style="height:50px;" border="5"> 
+          <p> With thanks to our funding sources:  <img src="http://www.cccblog.org/wp-content/uploads/2014/01/bd2k_logo.png" style="height:30px;" border="5">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/0/03/20070812181510%21NSF_Logo.jpg/120px-NSF_Logo.jpg" style="height:50px;" border="5">
           <img src="http://research.google.com/images/faculty_award.png" style="height:50px;" border="5"> <img src="http://peer.berkeley.edu/news/wp-content/uploads/2015/08/SiebelEnergyInstitute_Logowhite.jpg" style="height:50px;" border="5"> </p>
 
         </div>
       </div>
 
 
-      
+
       </div><!--/row-->
 
 
 
 
-    
+
 
     </div><!--/.container-->
 
